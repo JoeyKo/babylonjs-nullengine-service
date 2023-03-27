@@ -19,12 +19,13 @@ router.post('/loader', async (req: Request, res: Response, next: NextFunction) =
     // 3. load files and serialize meshes materials and textures.
     const scene = new Scene(engine);
     const jsonMeshes = [];
-    const { meshes } = await SceneLoader.ImportMeshAsync("", "http://localhost:4100/models/", "Kaws Base.fbx", scene);
+    const { rootUrl, sceneFileName } = req.body;
+    const { meshes } = await SceneLoader.ImportMeshAsync("", rootUrl, sceneFileName, scene);
     for (const mesh of meshes.filter((m: any) => m.subMeshes)) {
       jsonMeshes.push(exportMeshes(mesh as Mesh))
     }
-    res.json({ data: jsonMeshes })
 
+    res.json({ data: jsonMeshes })
   } catch (err) {
     next(err)
   }

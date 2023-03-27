@@ -5,7 +5,6 @@ export function exportMeshes(mesh: Mesh) {
 
   // Configure meshes
   json.meshes.forEach((m: any) => {
-    delete m.materialId; // just for mesh render
     delete m.geometryUniqueId;
     delete m.materialUniqueId;
   });
