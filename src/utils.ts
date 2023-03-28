@@ -1,4 +1,4 @@
-import { Mesh, SceneSerializer } from "babylonjs";
+import { Material, Mesh, SceneSerializer, BaseTexture } from "babylonjs";
 
 export function exportMeshes(mesh: Mesh) {
   const json = SceneSerializer.SerializeMesh(mesh, false, false)
@@ -13,5 +13,13 @@ export function exportMeshes(mesh: Mesh) {
   json.multiMaterials = [];
 
   return json
+}
+
+export function exportMaterial(material: Material) {
+  return material.serialize();
+}
+
+export function exportTexture(texture: BaseTexture) {
+  return texture.serialize();
 }
 
