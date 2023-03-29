@@ -1,4 +1,4 @@
-import { AbstractMesh, BaseTexture, Material, Mesh, NullEngine, Scene, SceneLoader, Texture, TextureUsage } from "babylonjs";
+import { AbstractMesh, Material, Mesh, NullEngine, Scene, SceneLoader } from "babylonjs";
 import "babylonjs-loaders";
 import express, { NextFunction } from 'express';
 import { Request, Response } from "express";
