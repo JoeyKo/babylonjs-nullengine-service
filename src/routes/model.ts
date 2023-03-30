@@ -39,6 +39,7 @@ router.post('/loader', async (req: Request, res: Response, next: NextFunction) =
 
     res.json({ meshes: jsonMeshes, materials: jsonMaterials, textures: jsonTextures })
   } catch (err) {
+    console.log(err);
     next(err)
   }
 });
