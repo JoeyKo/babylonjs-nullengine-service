@@ -1,6 +1,9 @@
 {
   "name": "babylonjs-nullengine-service",
-  "version": "1.0.0",
+  "version": "0.1.0",
+  "description": "The external service for the babylonjs render.",
+  "author": "JoeyKo",
+  "private": true,
   "license": "MIT",
   "scripts": {
     "start": "ts-node src/app.ts",
